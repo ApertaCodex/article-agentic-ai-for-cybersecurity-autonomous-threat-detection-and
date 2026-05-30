@@ -10,6 +10,9 @@ This is not another machine‑learning layer atop your SIEM. It’s not a SOAR p
 
 ## The operating problem
 
+![diagram](https://mermaid.ink/svg/Zmxvd2NoYXJ0IExSCiAgYWxlcnRbIkFsZXJ0IEluZ2VzdGlvbiJdCiAgdHJpYWdlWyJUcmlhZ2UgJiBDb3JyZWxhdGlvbiJdCiAgaW52ZXN0aWdhdGlvblsiTExNIEludmVzdGlnYXRpb24iXQogIHJpc2tbIlJpc2sgU2NvcmluZyJdCiAgZGVjaXNpb25bIkNvbnRhaW5tZW50IERlY2lzaW9uIl0KICBodW1hblsiSHVtYW4gRXNjYWxhdGlvbiJdCiAgcmVtZWRpYXRpb25bIkF1dG8tUmVtZWRpYXRpb24iXQogIGFsZXJ0IC0tPnxkZWR1cGxpY2F0ZXN8IHRyaWFnZQogIHRyaWFnZSAtLT58ZW5yaWNoZWQgaW5jaWRlbnR8IGludmVzdGlnYXRpb24KICBpbnZlc3RpZ2F0aW9uIC0tPnxoeXBvdGhlc2lzfCByaXNrCiAgcmlzayAtLT58c2NvcmV8IGRlY2lzaW9uCiAgZGVjaXNpb24gLS0-fGVzY2FsYXRlcyBpZiBsb3cgY29uZmlkZW5jZXwgaHVtYW4KICBkZWNpc2lvbiAtLT58YXV0by1jb250YWlucyBpZiBoaWdoIGNvbmZpZGVuY2V8IHJlbWVkaWF0aW9uCiAgaHVtYW4gLS0-fGFwcHJvdmVzIGFjdGlvbnwgcmVtZWRpYXRpb24=?width=800)
+
+
 The core pain isn’t detection. It’s noise. SIEM and EDR tools generate floods of alerts, most of them false positives or low‑fidelity indicators. SOAR platforms orchestrate responses but are confined to deterministic playbooks: *if alert X, then run script Y.* They cannot investigate. They cannot adapt. They cannot distinguish a red‑team exercise from the start of a Cobalt Strike beacon unless a human has codified every nuance.
 
 Agentic AI fills that gap. An agentic system ingests an alert, retrieves context from multiple sources, EDR telemetry, threat intel feeds, cloud logs, identity systems, and builds a dynamic investigation graph. It decides what to query next. It correlates seemingly unrelated signals across endpoints, identities, and network flows. Then it selects a response action, quarantine a host, revoke a session token, disable a user account, based on a risk score and a policy you’ve defined.
@@ -19,6 +22,9 @@ This shifts analysts from triage operators to threat hunters. When agents handle
 But moving from rule‑based automation to autonomous agents introduces new architectural demands. You cannot bolt an LLM onto your existing stack and call it done.
 
 ## The architecture that holds up
+
+![diagram](https://mermaid.ink/svg/Zmxvd2NoYXJ0IExSCiAgc2llbVsiU0lFTSAoU3BsdW5rIEVTKSJdCiAgc29hclsiU09BUiAoQ29ydGV4IFhTT0FSKSJdCiAgZWRyWyJFRFIgKENyb3dkU3RyaWtlIEZhbGNvbikiXQogIHRocmVhdF9pbnRlbFsiVGhyZWF0IEludGVsIChSZWNvcmRlZCBGdXR1cmUpIl0KICBhZ2VudGljX2FpWyJBZ2VudGljIEFJIEVuZ2luZSAoRHJvcHpvbmUgQUkpIl0KICBodW1hbl9hbmFseXN0WyJIdW1hbiBBbmFseXN0IENvbnNvbGUiXQogIHNpZW0gLS0-fHNlbmRzIGFsZXJ0c3wgYWdlbnRpY19haQogIGFnZW50aWNfYWkgLS0-fHF1ZXJpZXMgdGVsZW1ldHJ5fCBlZHIKICBhZ2VudGljX2FpIC0tPnxlbnJpY2hlcyBjb250ZXh0fCB0aHJlYXRfaW50ZWwKICBhZ2VudGljX2FpIC0tPnx0cmlnZ2VycyBwbGF5Ym9va3N8IHNvYXIKICBhZ2VudGljX2FpIC0tPnxlc2NhbGF0ZXMgaGlnaC1yaXNrfCBodW1hbl9hbmFseXN0CiAgaHVtYW5fYW5hbHlzdCAtLT58ZmVlZGJhY2sgbG9vcHwgYWdlbnRpY19haQ==?width=800)
+
 
 Can you trust an AI agent to isolate a production server at 3 a.m.? The answer depends entirely on the control points you build around it.
 
@@ -83,19 +89,3 @@ This forward‑looking model demands a governance framework that keeps pace. You
 The operating model shift is clear: from a SOC that reacts to a SOC that continuously learns and adapts. Agentic AI is the engine. The fuel is your team’s expertise, codified into policies, feedback loops, and trust boundaries. Start small. Pick one high‑volume, low‑risk alert type. Deploy an agent in shadow mode. Measure relentlessly. Expand autonomy only when the data supports it. And always keep a human in the loop for the decisions that could break your business.
 
 The attackers are already automating. Your response shouldn’t be manual.
-
----
-
-*Originally published on the [Omnithium Blog](https://omnithium.ai/blog/agentic-ai-cybersecurity-threat-response).*
-
-📚 Explore more articles on the [Omnithium Blog](https://omnithium.ai/blog)
-
-🚀 [Get started with Omnithium](https://omnithium.ai/signup) | [Explore the platform](https://omnithium.ai/platform/) | [Book a demo](https://omnithium.ai/demo/) | [Resources](https://omnithium.ai/resources)
-
----
-
-**[Omnithium](https://omnithium.ai)** -- the AI agent platform for enterprises.
-
-📚 [Explore the Omnithium Blog](https://omnithium.ai/blog) for more insights.
-
-🚀 [Get started](https://omnithium.ai/signup) | [Explore the platform](https://omnithium.ai/platform/) | [Book a demo](https://omnithium.ai/demo/) | [Resources](https://omnithium.ai/resources)
